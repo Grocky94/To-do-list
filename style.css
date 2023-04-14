@@ -1,0 +1,56 @@
+* {
+    color: #D78BAB;
+    box-sizing: border-box;
+}
+
+.card {
+    border: 1px solid black;
+    height: 500px;
+    width: 500px;
+    text-align: center;
+    margin: auto;
+    background-color: #97375F;
+}
+
+.submit.btn {
+    width: 400px;
+    margin-top: 10px;
+    color: #97375F;
+    font-size: larger;
+    font-weight: bold;
+}
+
+#userDetails {
+    height: 30px;
+    width: 400px;
+    outline: none;
+}
+
+.collection {
+    list-style-type: none;
+}
+
+.collection-item {
+    border: 1px solid #D78BAB;
+    height: 30px;
+    width: 400px;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.clear.item {
+    height: 30px;
+    width: 400px;
+    margin-top: 10px;
+    outline: none;
+}
+
+.clear.task {
+    height: 30px;
+    width: 400px;
+    margin-top: 10px;
+    color: #97375F;
+    font-size: larger;
+    font-weight: bold;
+}
