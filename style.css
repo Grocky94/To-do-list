@@ -8,11 +8,11 @@
     height: 500px;
     width: 500px;
     text-align: center;
-    margin: auto;
+    margin-left: 35%;
     background-color: #97375F;
 }
 
-.submit.btn {
+.submit_btn {
     width: 400px;
     margin-top: 10px;
     color: #97375F;
@@ -21,9 +21,58 @@
 }
 
 #userDetails {
-    height: 30px;
-    width: 400px;
+    height: 100%;
+    width: 100%;
+    padding-top: 20px;
+    border: none;
     outline: none;
+    background-color: #97375F;
+    border-bottom: 1px solid white;
+}
+
+.form> :nth-child(2) {
+    position: absolute;
+    bottom: 0px;
+    left: 0%;
+    text-align: start;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+}
+
+.form> :nth-child(2)::after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    height: 100%;
+    width: 100%;
+    border-bottom: 3px solid black;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.input-name {
+    position: absolute;
+    bottom: 5px;
+    left: 0px;
+    transition: all 0.3s ease;
+}
+
+#userDetails:focus+.userDetails-label .input-name {
+    transform: translateY(-150%);
+}
+
+#userDetails:focus+.userDetails-label::after {
+    transform: translateX(0%);
+}
+
+.form {
+    width: 80%;
+    position: relative;
+    height: 50px;
+    margin-left: 10%;
+    overflow: hidden;
 }
 
 .collection {
@@ -39,14 +88,25 @@
     justify-content: space-between;
 }
 
-.clear.item {
-    height: 30px;
-    width: 400px;
-    margin-top: 10px;
+.clear_item {
+    height: 100%;
+    width: 100%;
+    padding-top: 20px;
+    border: none;
     outline: none;
+    background-color: #97375F;
+    border-bottom: 1px solid white;
 }
 
-.clear.task {
+.clear_item:focus+.userDetails-label .input-name {
+    transform: translateY(-150%);
+}
+
+.clear_item:focus+.userDetails-label::after {
+    transform: translateX(0%);
+}
+
+.clear_task {
     height: 30px;
     width: 400px;
     margin-top: 10px;

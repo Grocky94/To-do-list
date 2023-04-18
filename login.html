@@ -14,16 +14,26 @@
 <body>
     <form class="card">
         <h1>To do list</h1>
-        <input Id="userDetails"/>
-        <label for="type your to do`s here"></label><br>
-        <button for="userDetails" class="submit btn" Event="addTask()">submit</button>
+        <div class="form">
+            <input Id="userDetails" name="task list" type="text" autocomplete="off" />
+            <label for="task list" class="userDetails-label">
+                <span class="input-name">List Here</span>
+            </label>
+        </div>
+        <br>
+        <button for="userDetails" class="submit_btn" Event="addTask()">submit</button>
         <h1>Task listed</h1>
         <div>
             <ul class="collection"> </ul>
         </div>
-        <input class="clear item"/>
-        <label for="filter task"></label><br>
-        <button class="clear task">Clear task</button>
+        <div class="form">
+            <input class="clear_item" name="filter" type="text" autocomplete="off" />
+            <label for="filter" class="userDetails-label">
+                <span class="input-name">Filter Task</span>
+            </label>
+        </div>
+        <br>
+        <button class="clear_task">Clear task</button>
     </form>
 
     <script src="/script.js"></script>
