@@ -30,11 +30,12 @@ function loadEventListeners() {
 // add task from LS
 function taskProjector() {
     let item;
-    if (localStorage.getItem('item') === null) {
+    if (localStorage.getItem('work') === null) {
         item = [];
     } else {
-        item = JSON.parse(localStorage.getItem('item'));
+        item = JSON.parse(localStorage.getItem('work'));
     }
+
 
     item.forEach(function (work) {
         // create li element
@@ -44,7 +45,7 @@ function taskProjector() {
         li.className = 'collection-item';
 
         //create a text node and append to li
-        li.appendChild(document.createTextNode('work'));
+        li.appendChild(document.createTextNode(work));
 
         // create new link element
         let link = document.createElement('a');
@@ -118,13 +119,11 @@ function storeItemsInLocalStorage(work) {
     if (localStorage.getItem('work') === null) {
         item = [];
     } else {
-        item = JSON.parse(localStorage.getItem(item));
+        item = JSON.parse(localStorage.getItem('work'));
     }
-    item = item + " " + work;
-    
-    console.log(window.localStorage);
+    item.push(work);
 
-    localStorage.setItem('work', JSON.stringify('item'));
+    localStorage.setItem('work', JSON.stringify(item));
 }
 
 //romove task in UI 
@@ -134,8 +133,27 @@ function removeTask(e) {
     if (e.target.parentElement.className === 'delete-item') {
         if (confirm('Are you sure ?')) {
             e.target.parentElement.parentElement.remove();
+            //remove task from LS
+            removeTaskFromLocalStorage(e.target.parentElement.parentElement);
         }
     }
+}
+
+//Remove from LS
+function removeTaskFromLocalStorage(something) {
+    let item;
+    if (localStorage.getItem('work') === null) {
+        item = [];
+    } else {
+        item = JSON.parse(localStorage.getItem('work'));
+    }
+    item.forEach(function (deleteTask , index) {
+        if (something.textContent === deleteTask ) {
+            item.splice(index , 1);
+        }
+    });
+    localStorage.setItem('work',JSON.stringify(item));
+    
 }
 // task clear in UI
 
@@ -147,6 +165,12 @@ function taskClear() {
     while (showCase.firstChild) {
         showCase.removeChild(showCase.firstChild);
     }
+    //clear everything from LS
+    clearTaskFromLocalStorage();
+}
+// clear all the task from the LS
+function clearTaskFromLocalStorage(){
+    localStorage.clear();
 }
 // task to filter in UI
 function taskFilter(e) {

@@ -59,11 +59,11 @@
     transition: all 0.3s ease;
 }
 
-#userDetails:focus+.userDetails-label .input-name {
+#userDetails:focus+.userDetails-label .input-name{
     transform: translateY(-150%);
 }
 
-#userDetails:focus+.userDetails-label::after {
+#userDetails:focus+.userDetails-label::after{
     transform: translateX(0%);
 }
 
@@ -98,12 +98,15 @@
     border-bottom: 1px solid white;
 }
 
-.clear_item:focus+.userDetails-label .input-name {
+.clear_item:focus+.userDetails-label .input-name{
     transform: translateY(-150%);
 }
 
+
+
 .clear_item:focus+.userDetails-label::after {
     transform: translateX(0%);
+
 }
 
 .clear_task {
